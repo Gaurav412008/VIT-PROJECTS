@@ -1,76 +1,61 @@
-# Faculty Cabin Management System
+Faculty Cabin Management System
+Overview
+This Python script allows users to search for faculty members and their assigned cabin numbers, and provides an owner/admin mode for updating the list by adding or deleting entries. The script is interactive, user-friendly, and designed for use in educational institutions to quickly find staff office locations or manage the cabin directory.
 
-A simple Python console application to manage faculty names and their assigned cabin locations. The program supports user lookups and secure owner updates (add/delete) of records.
+Features
+Search for faculty cabins by full or partial name.
 
----
+Owner (admin) authentication for secure access to update records.
 
-## Table of Contents
+Add or delete faculty-cabin assignments in owner mode.
 
-- [Overview](#overview)
-- [Features](#features)
-- [Data Structure](#data-structure)
-- [Usage](#usage)
-- [Installation](#installation)
+Persistent loop for multiple queries until the user exits.
 
----
+How to Use
+1. User Mode (Search)
+Run the script.
 
-## Overview
+When prompted, select user mode by entering 1 or user.
 
-This project implements a command-line interface that allows two types of users:
+Input the full or partial name of the faculty member.
 
-- **User:** Search for faculty members by name (or part of the name) to find their cabin number.
-- **Owner:** Log in with credentials to add new faculty records or delete existing ones.
+The script will display all matching faculty names and their cabin numbers.
 
-The data is stored in a Python dictionary for quick lookups and updates.
+If no matches are found, you will see "Data not available".
 
----
+Choose to exit or continue searching.
 
-## Features
+2. Owner Mode (Admin Operations)
+Select owner mode by entering 2 or owner.
 
-- Case-insensitive partial search for faculty names.
-- Secure owner login with username/password.
-- Add new faculty with confirmation.
-- Delete faculty by exact name match.
-- Repeated operations until explicit exit.
-- Simple and intuitive interaction flow.
+Enter the username (Gaurav) and password (VITBPL) for admin access.
 
----
+Choose to add a new faculty (by entering 1 or add) or delete an existing faculty (by entering 2 or delete).
 
-## Data Structure
+For adding: Input the faculty name and cabin, confirm details, and the entry will be added.
 
-Uses a Python dictionary:
+For deleting: Input the exact faculty name to remove the entry.
 
-a = {
-"dr. baseera a": "G-01",
-"dr. vinod bhatt": "G-02",
-...
-"Dr Prashant GK": "A-250"
-}
+Option to exit or continue updating after each operation.
 
+Example
+text
+enter if you are a user(1)/owner(2) user
+Enter the name (or part of the name) of the faculty: baseera
+dr. baseera a : G-01
+do you want to exit(1)/not exit(2) 1
+Notes
+All operations are case-insensitive for name search.
 
-Faculty names are keys and cabin numbers are values.
+Owner credentials are fixed as Gaurav and VITBPL. Change them in code for security.
 
----
+The initial faculty list is stored in a Python dictionary within the script and does not persist after the program ends. To make data changes persistent, consider adding file write/read features.
 
-## Usage
+Use exact faculty names as stored in the dictionary for delete operations.
 
-1. Run the script: `python faculty_cabin_management.py` (or copy-paste the code in your environment)
-2. Choose user type (user=1/owner=2).
-3. For user:
-   - Enter faculty name or partial name to search.
-   - View matching results or "Data not available".
-4. For owner:
-   - Enter username and password.
-   - Choose to add (1) or delete (2) a faculty record.
-   - Follow prompts to complete operations.
-5. Exit when done.
+Limitations
+No database or file storage; changes exist only during program runtime.
 
----
+Only basic error handling.
 
-## Installation
-
-No external dependencies. Requires Python 3.x installed.
-
-Simply clone/download and run the script.
-
----
+Consider feature enhancements (such as file I/O or GUI interface) for broader use.
