@@ -52,10 +52,3 @@ Owner credentials are fixed as Gaurav and VITBPL. Change them in code for securi
 The initial faculty list is stored in a Python dictionary within the script and does not persist after the program ends. To make data changes persistent, consider adding file write/read features.
 
 Use exact faculty names as stored in the dictionary for delete operations.
-
-Limitations
-No database or file storage; changes exist only during program runtime.
-
-Only basic error handling.
-
-Consider feature enhancements (such as file I/O or GUI interface) for broader use.
